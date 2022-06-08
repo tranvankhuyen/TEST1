@@ -7,6 +7,5 @@ setInterval(() => {
         // let test = data.timeCounter;
         console.log(data);
     })
-    
 }, 1000)
 

@@ -1,10 +1,8 @@
-let x, check
-
-let y = 0
+let x, checkTimeBlock
 
 if (window.location.hostname === 'www.facebook.com') {
-    chrome.storage.sync.get(['check'], function (result) {
-        check = result.check
+    chrome.storage.sync.get(['checkTimeBlock'], function (result) {
+        checkTimeBlock = result.check
     })
     setTimeout(() => {
         if (check == 1) {
@@ -22,9 +20,8 @@ if (window.location.hostname === 'www.facebook.com') {
                     x++
                     chrome.storage.sync.set({ timeCounter: x })
                     if (x >= 7) {
-                        chrome.storage.sync.set({ check: 1 })
+                        chrome.storage.sync.set({ checkTimeBlock: 1 })
                         window.location.href = 'https://unruly-sparkly-dress.glitch.me/'
-
                     }
                 }, 1000)
             }, 10)
