@@ -2,10 +2,6 @@ let x, check
 
 let y = 0
 
-setInterval(() => {
-    chrome.storage.sync.clear()
-}, 4000)
-
 if (window.location.hostname === 'www.facebook.com') {
     chrome.storage.sync.get(['check'], function (result) {
         check = result.check
@@ -25,10 +21,12 @@ if (window.location.hostname === 'www.facebook.com') {
                 setInterval(() => {
                     x++
                     chrome.storage.sync.set({ timeCounter: x })
-                    if (x == 7) {
-                        window.location.href =
-                            'https://unruly-sparkly-dress.glitch.me/'
+                    if (x >= 7) {
                         chrome.storage.sync.set({ check: 1 })
+                        window.location.href = 
+                            'https://unruly-sparkly-dress.glitch.me/'
+                        chrome.storage.sync.set({ timeCounter: 0 })
+                        setInterval.clear();
                     }
                 }, 1000)
             }, 10)
