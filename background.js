@@ -1,10 +1,12 @@
 
-let x;
-chrome.storage.sync.set({TEST: 5})
-
-chrome.storage.sync.get(['TEST'], function(result) {
-    console.log(result)
-})
 
 
+
+setInterval(() => {
+    chrome.storage.sync.get(null, function(data) {
+        // let test = data.timeCounter;
+        console.log(data);
+    })
+    
+}, 1000)
 
