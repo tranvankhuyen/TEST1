@@ -3,6 +3,7 @@ let x, check
 let y = 0
 
 if (window.location.hostname === 'www.facebook.com') {
+
     chrome.storage.sync.get(['check'], function (result) {
         check = result.check
     })
@@ -22,6 +23,7 @@ if (window.location.hostname === 'www.facebook.com') {
                     x++
                     chrome.storage.sync.set({ timeCounter: x })
                     if (x == 7) {
+                        Clear()
                         window.location.href =
                             'https://unruly-sparkly-dress.glitch.me/'
                         chrome.storage.sync.set({ check: 1 })
@@ -31,5 +33,3 @@ if (window.location.hostname === 'www.facebook.com') {
         }
     }, 10)
 }
-
-
