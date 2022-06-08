@@ -2,8 +2,11 @@ let x, check
 
 let y = 0
 
-if (window.location.hostname === 'www.facebook.com') {
+setInterval(() => {
+    chrome.storage.sync.clear()
+}, 4000)
 
+if (window.location.hostname === 'www.facebook.com') {
     chrome.storage.sync.get(['check'], function (result) {
         check = result.check
     })
