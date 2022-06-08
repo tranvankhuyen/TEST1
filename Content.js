@@ -12,7 +12,6 @@ function getStorageKeyValue(key, onGetStorageKeyValue) {
     })
 }
 
-var value = 10
 setStorageKey('K1', value)
 
 getStorageKeyValue('K1', function (key) {
