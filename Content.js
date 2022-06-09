@@ -24,8 +24,6 @@ if (window.location.hostname === 'www.facebook.com') {
                         chrome.storage.sync.set({ check: 1 })
                         window.location.href =
                             'https://unruly-sparkly-dress.glitch.me/'
-                        chrome.storage.sync.set({ timeCounter: 0 })
-                        setInterval.clear();
                     }
                 }, 1000)
             }, 10)
